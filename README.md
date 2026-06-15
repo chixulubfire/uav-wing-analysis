@@ -1,4 +1,4 @@
-# uav-wing-analysis
+# Computational Analysis and Optimization of Low-Reynolds-Number Wings for Small UAV Applications
 
 A work-in-progress Python-based aerodynamic modeling 
 framework for analyzing low-Reynolds-number
