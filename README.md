@@ -1,6 +1,6 @@
 # uav-wing-analysis
 
-A Python-based aerodynamic modeling 
+A work-in-progress Python-based aerodynamic modeling 
 framework for analyzing low-Reynolds-number
 UAV wing performance using finite-wing 
 theory.
@@ -73,6 +73,7 @@ downwash effects)
 #### Future Work
 - Incorporate higher-fidelity aerodynamic methods (e.g. CFD validation)
 - Investigate stall dynamics
+- Package into an application
 
 ### Contributing
 This is an independent research project.
