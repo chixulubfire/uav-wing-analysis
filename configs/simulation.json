@@ -1,0 +1,17 @@
+{
+  "air": {
+    "air_density_kgm3": 1.218,
+    "dynamic_viscosity_pas": 1.812e-5,
+    "velocity_ms": 22
+  },
+  "model": {
+    "oswald_efficiency": 0.8,
+    "stall_angle_deg": 15
+  },
+  "numerics": {
+    "alpha_min_deg": -5,
+    "alpha_max_deg": 15,
+    "alpha_step": 0.5,
+    "convergence_tolerance": 1e-6
+  }
+}
