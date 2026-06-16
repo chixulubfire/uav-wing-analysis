@@ -31,20 +31,70 @@ numbers. This model can be used to study how wing geometry
 influences lift, drag, and overall aerodynamic efficiency.
 
 ### Built With
-TBD
+- Python 3.14.0 — simulation and modeling framework
+- NumPy — numerical methods for aerodynamic computation
+- Matplotlib — post-processing and visualization of aerodynamic performance
+- JSON — structured configuration system for geometry, physics, and test cases
 
 ### Getting Started
-TBD
-
 #### Prerequisites
-TBD
+- Python 3.9.0+
+- NumPy
+- Matplotlib
 
 #### Installation
-TBD
+#### 1. Clone the repo
+```bash
+git clone https://github.com/chixulubfire/uav-wing-analysis
+cd uav-wing-analysis
+```
+#### 2. Create environment (optional but recommended)
+```bash
+python -m venv .venv
+```
+Windows:
+```bash
+.venv/Scripts/activate
+```
+Mac/Linux:
+```bash
+source .venv/bin/activate
+```
+#### 3. Install dependencies
+```bash
+pip install -r requirements.txt
+```
 
 ### Usage
-TBD
+#### 1. Define simulation case
+Create or edit a trial JSON file in ```configs/trials```
 
+Example ```trial1.json```:
+```
+{
+  "airfoil": "NACA0012",
+  "wing_span_m": 1,
+  "root_chord_length_m": 0.2,
+  "tip_chord_length_m": 0.2,
+  "twist_angle_deg": 0,
+  "sweep_angle_deg": 0,
+  "dihedral_angle_deg": 0
+}
+```
+#### 2. Set simulation configuration
+Edit ```configs/simulation.json```:
+```
+{
+  "trial": "../configs/trials/trial1.json",
+}
+```
+#### 3. Run the simulation
+```bash
+python main.py
+```
+All configuration is file-driven via JSON, 
+enabling rapid iteration of wing geometries 
+without modifying source code.
 ### Roadmap
 This project is under active development. The following 
 milestones outline the planned progression of the 

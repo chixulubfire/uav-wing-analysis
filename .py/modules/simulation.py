@@ -1,6 +1,7 @@
 import json
 from .airfoil import Airfoil
 from .wing import Wing
+from .aerodynamics import Aerodynamics
 
 def build_wing(config):
     airfoil = Airfoil(config["airfoil"])
