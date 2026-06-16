@@ -1,5 +1,5 @@
 {
-  "trial": "trial1.json",
+  "trial": "../configs/trials/trial1.json",
 
   "air": {
     "air_density_kgm3": 1.218,
