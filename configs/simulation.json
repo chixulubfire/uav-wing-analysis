@@ -1,4 +1,6 @@
 {
+  "trial": "trial1.json",
+
   "air": {
     "air_density_kgm3": 1.218,
     "dynamic_viscosity_pas": 1.812e-5,

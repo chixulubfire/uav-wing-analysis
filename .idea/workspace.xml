@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4f37e17-bcbc-4954-a1d6-c3b67480b3f9" name="Changes" comment="Establishing directory structure">
-      <change afterPath="$PROJECT_DIR$/configs/simulation.json" afterDir="false" />
+    <list default="true" id="b4f37e17-bcbc-4954-a1d6-c3b67480b3f9" name="Changes" comment="Define program inputs">
+      <change afterPath="$PROJECT_DIR$/configs/supported_airfoils.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/configs/trials/trial1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/physics.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/trials/baseline.json" beforeDir="false" afterPath="$PROJECT_DIR$/configs/trials/baseline.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.py/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/.py/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.py/modules/airfoil.py" beforeDir="false" afterPath="$PROJECT_DIR$/.py/modules/airfoil.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/simulation.json" beforeDir="false" afterPath="$PROJECT_DIR$/configs/simulation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/trials/baseline.json" beforeDir="false" afterPath="$PROJECT_DIR$/configs/baseline.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,17 +49,18 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "settings.editor.selected.configurable": "Errors"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\chixu\PycharmProjects\uav-wing-analysis\configs" />
       <recent name="C:\Users\chixu\PycharmProjects\uav-wing-analysis" />
       <recent name="C:\Users\chixu\PycharmProjects\uav-wing-analysis\py" />
     </key>
@@ -91,12 +96,21 @@
       <option name="project" value="LOCAL" />
       <updated>1781534505301</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Define program inputs">
+      <option name="closed" value="true" />
+      <created>1781566448560</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1781566448560</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="README" />
     <MESSAGE value="Establishing directory structure" />
-    <option name="LAST_COMMIT_MESSAGE" value="Establishing directory structure" />
+    <MESSAGE value="Define program inputs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Define program inputs" />
   </component>
 </project>
