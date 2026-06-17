@@ -6,24 +6,15 @@ class Visualization:
     def __init__(self, aerodynamics):
         self.aerodynamics = aerodynamics
 
-        self.n = (
-            self.aerodynamics.physics)["numerics"]["airfoil_points"]
-        self.a_min = (
-            self.aerodynamics.physics)["numerics"]["alpha_min_deg"]
-        self.a_max = (
-            self.aerodynamics.physics)["numerics"]["alpha_max_deg"]
-        self.a_step = (
-            self.aerodynamics.physics)["numerics"]["alpha_step"]
-        self.convergence\
-            = self.aerodynamics.physics["numerics"]["convergence_tolerance"]
+        self.n = aerodynamics.physics["numerics"]["airfoil_points"]
 
-    def plot(self):
+    def plot_airfoil(self, title):
         if self.aerodynamics.wing.airfoil.type == "NACA4":
-            self.plot_naca4()
+            self.plot_naca4(title)
         else:
             pass
 
-    def plot_naca4(self):
+    def plot_naca4(self, title):
         # NACA 4-digit coordinate generation adapted from:
         # https://web.itu.edu.tr/~atares/courses/CA/3.1.1_NACA4.html
 
@@ -73,10 +64,41 @@ class Visualization:
             yu[i] = yc[i] + yt[i] * mt.cos(teta)
             yl[i] = yc[i] - yt[i] * mt.cos(teta)
 
+        plt.title(title)
         plt.axis('equal')
         plt.plot(xu, yu, color='black')
         plt.plot(xl, yl, color='black')
         plt.plot(x, yc, 'b--')
         plt.yticks([])
         plt.xticks([])
+        plt.show()
+
+    def plot(self, title):
+        results = self.aerodynamics.alpha_sweep()
+
+        alpha = results["alpha"]
+        cl = results["cl"]
+        cd = results["cd"]
+        ld = results["ld"]
+
+        fig, axs = plt.subplots(3, 1, figsize=(6, 10), sharex=True)
+
+        # CL
+        axs[0].plot(alpha, cl)
+        axs[0].set_ylabel("CL")
+        axs[0].grid(True)
+        axs[0].set_title(title + " Aerodynamic Performance vs Angle of Attack")
+
+        # CD
+        axs[1].plot(alpha, cd)
+        axs[1].set_ylabel("CD")
+        axs[1].grid(True)
+
+        # L/D
+        axs[2].plot(alpha, ld)
+        axs[2].set_ylabel("L/D")
+        axs[2].set_xlabel("Angle of Attack (deg)")
+        axs[2].grid(True)
+
+        plt.tight_layout()
         plt.show()

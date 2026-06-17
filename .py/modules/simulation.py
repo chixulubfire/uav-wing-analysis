@@ -37,5 +37,7 @@ class Simulation:
         self.vis = Visualization(self.aero)
         self.base_vis = Visualization(self.base_aero)
 
-        self.vis.plot()
-        self.base_vis.plot()
+        self.vis.plot_airfoil("Trial Airfoil")
+        self.vis.plot("Trial")
+        self.base_vis.plot_airfoil("Baseline Airfoil")
+        self.base_vis.plot("Baseline")

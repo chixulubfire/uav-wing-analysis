@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4f37e17-bcbc-4954-a1d6-c3b67480b3f9" name="Changes" comment="Add core aerodynamic modeling framework">
+    <list default="true" id="b4f37e17-bcbc-4954-a1d6-c3b67480b3f9" name="Changes" comment="Fix README">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.py/modules/airfoil.py" beforeDir="false" afterPath="$PROJECT_DIR$/.py/modules/airfoil.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.py/modules/aerodynamics.py" beforeDir="false" afterPath="$PROJECT_DIR$/.py/modules/aerodynamics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.py/modules/simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/.py/modules/simulation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.py/modules/visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/.py/modules/visualization.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.py/modules/wing.py" beforeDir="false" afterPath="$PROJECT_DIR$/.py/modules/wing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/configs/simulation.json" beforeDir="false" afterPath="$PROJECT_DIR$/configs/simulation.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -138,7 +135,23 @@
       <option name="project" value="LOCAL" />
       <updated>1781663302507</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Implement airfoil geometry visualization and correct MAC calculation, add references">
+      <option name="closed" value="true" />
+      <created>1781707659906</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1781707659916</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Fix README">
+      <option name="closed" value="true" />
+      <created>1781707772186</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1781707772186</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -149,6 +162,8 @@
     <MESSAGE value="Add Wing class and refactor simulation initialization" />
     <MESSAGE value="Improve README and implement Aerodynamics class structure" />
     <MESSAGE value="Add core aerodynamic modeling framework" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add core aerodynamic modeling framework" />
+    <MESSAGE value="Implement airfoil geometry visualization and correct MAC calculation, add references" />
+    <MESSAGE value="Fix README" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fix README" />
   </component>
 </project>
