@@ -125,6 +125,17 @@ downwash effects)
 - Investigate stall dynamics
 - Package into an application
 
+### References
+
+1. ERAU, *Finite Wing Characteristics*.
+   https://eaglepubs.erau.edu/introductiontoaerospaceflightvehicles/chapter/finite-wing-characteristics/
+
+2. ERAU, *Computational Simulation for Aerospace Engineers*.
+   https://eaglepubs.erau.edu/compsimforaero/chapter/c-3/
+
+3. Akgün, A., *NACA 4-Digit Airfoil Generation*.
+   https://web.itu.edu.tr/~atares/courses/CA/3.1.1_NACA4.html
+
 ### Contributing
 This is an independent research project.
 Contributions, feedback, and suggestions are welcome, especially in areas such as:

@@ -11,6 +11,7 @@
     "stall_angle_deg": 15
   },
   "numerics": {
+    "airfoil_points": 100,
     "alpha_min_deg": -5,
     "alpha_max_deg": 15,
     "alpha_step": 0.5,

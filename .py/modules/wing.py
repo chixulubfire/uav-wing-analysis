@@ -23,4 +23,4 @@ class Wing:
         self.area = self.r_chord * self.t_chord / 2 * self.span
         self.ar = self.span ** 2 / self.area
         self.taper = self.t_chord / self.r_chord
-        self.mean_chord = self.area / self.span
+        self.mean_chord = (r_chord + t_chord) / 2

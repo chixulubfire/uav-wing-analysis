@@ -2,6 +2,7 @@ import json
 from .airfoil import Airfoil
 from .wing import Wing
 from .aerodynamics import Aerodynamics
+from .visualization import Visualization
 
 def build_wing(config):
     airfoil = Airfoil(config["airfoil"])
@@ -29,3 +30,12 @@ class Simulation:
 
         self.wing = build_wing(self.trial)
         self.base_wing = build_wing(self.baseline)
+
+        self.aero = Aerodynamics(self.wing, self.sim_config)
+        self.base_aero = Aerodynamics(self.base_wing, self.sim_config)
+
+        self.vis = Visualization(self.aero)
+        self.base_vis = Visualization(self.base_aero)
+
+        self.vis.plot()
+        self.base_vis.plot()
