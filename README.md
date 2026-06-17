@@ -19,6 +19,7 @@ theory.
   - [Phase 4: Optimization](#phase-4-optimization)
   - [Phase 5: Experimental Validation](#phase-5-experimental-validation)
   - [Future Work](#future-work)
+- [References](#references)
 - [Contributing](#contributing)
 - [License](#license)
 - [Disclaimer](#disclaimer)
