@@ -7,25 +7,35 @@ class Aerodynamics:
 
         self.air_density = physics["air"]["air_density_kgm3"]
         self.dynamic_viscosity = physics["air"]["dynamic_viscosity_pas"]
-        self.velocity = physics["air"]["velocity_pas"]
+        self.velocity = physics["air"]["velocity_ms"]
 
         self.oswald_efficiency = physics["model"]["oswald_efficiency"]
         self.stall_angle = physics["model"]["stall_angle_deg"]
 
-    def reynolds_number(self):
-        pass
+    def reynolds_number(self, chord):
+        return (self.air_density * self.velocity
+                * chord / self.dynamic_viscosity)
 
-    def cl(self):
-        pass
+    def cl(self, alpha):
+        return 2 * math.pi * math.radians(alpha)
 
-    def cdi(self):
-        pass
+    def cf(self): # Flow assumed to be laminar (Re < 5 x 10^5)
+        return 1.328 / math.sqrt(self.reynolds_number(self.wing.mean_chord))
 
-    def cd(self):
-        pass
+    def cd0(self):
+        return 0.02 # temporary simple assumption
 
-    def lift(self):
-        pass
+    def cdi(self, alpha):
+        return (self.cl(alpha) ** 2 / (math.pi
+                * self.wing.ar * self.oswald_efficiency))
 
-    def drag(self):
-        pass
+    def cd(self, alpha):
+        return self.cd0() + self.cdi(alpha)
+
+    def lift(self, alpha):
+        return (0.5 * self.air_density * self.velocity
+                ** 2 * self.wing.area * self.cl(alpha))
+
+    def drag(self, alpha):
+        return (0.5 * self.air_density * self.velocity
+                ** 2 * self.wing.area * self.cd(alpha))
