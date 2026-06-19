@@ -5,5 +5,8 @@
   "tip_chord_length_m": 0.2,
   "twist_angle_deg": 0,
   "sweep_angle_deg": 0,
-  "dihedral_angle_deg": 0
+  "dihedral_angle_deg": 0,
+
+  "oswald_efficiency": 0.8,
+  "stall_angle_deg": 15
 }

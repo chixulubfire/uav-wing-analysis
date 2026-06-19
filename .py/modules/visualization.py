@@ -84,17 +84,23 @@ class Visualization:
         fig, axs = plt.subplots(3, 1, figsize=(6, 10), sharex=True)
 
         # CL
+        axs[0].axvline(x=self.aerodynamics.wing.stall_angle,
+                       color='red', linestyle='--', linewidth=2)
         axs[0].plot(alpha, cl)
         axs[0].set_ylabel("CL")
         axs[0].grid(True)
         axs[0].set_title(title + " Aerodynamic Performance vs Angle of Attack")
 
         # CD
+        axs[1].axvline(x=self.aerodynamics.wing.stall_angle,
+                       color='red', linestyle='--', linewidth=2)
         axs[1].plot(alpha, cd)
         axs[1].set_ylabel("CD")
         axs[1].grid(True)
 
         # L/D
+        axs[2].axvline(x=self.aerodynamics.wing.stall_angle,
+                       color='red', linestyle='--', linewidth=2)
         axs[2].plot(alpha, ld)
         axs[2].set_ylabel("L/D")
         axs[2].set_xlabel("Angle of Attack (deg)")

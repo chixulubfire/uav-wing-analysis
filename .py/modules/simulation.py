@@ -14,7 +14,10 @@ def build_wing(config):
         config["tip_chord_length_m"],
         config["twist_angle_deg"],
         config["sweep_angle_deg"],
-        config["dihedral_angle_deg"]
+        config["dihedral_angle_deg"],
+
+        config["oswald_efficiency"],
+        config["stall_angle_deg"]
     )
 
 # load configs

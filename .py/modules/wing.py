@@ -7,7 +7,10 @@ class Wing:
             t_chord,
             twist,
             sweep,
-            dihedral
+            dihedral,
+
+            efficiency,
+            stall_angle
     ):
         self.airfoil = airfoil
 
@@ -18,6 +21,9 @@ class Wing:
         self.twist = twist
         self.sweep = sweep
         self.dihedral = dihedral
+
+        self.oswald_efficiency = efficiency
+        self.stall_angle = stall_angle
 
         # Derived geometries
         self.area = self.r_chord * self.t_chord / 2 * self.span

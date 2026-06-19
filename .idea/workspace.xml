@@ -1,11 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b4f37e17-bcbc-4954-a1d6-c3b67480b3f9" name="Changes" comment="Fix README">
+    <list default="true" id="b4f37e17-bcbc-4954-a1d6-c3b67480b3f9" name="Changes" comment="Implement AoA sweep plotting for aerodynamic coefficients (CL, CD, L/D)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.py/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/.py/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.py/modules/aerodynamics.py" beforeDir="false" afterPath="$PROJECT_DIR$/.py/modules/aerodynamics.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.py/modules/simulation.py" beforeDir="false" afterPath="$PROJECT_DIR$/.py/modules/simulation.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.py/modules/visualization.py" beforeDir="false" afterPath="$PROJECT_DIR$/.py/modules/visualization.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.py/modules/wing.py" beforeDir="false" afterPath="$PROJECT_DIR$/.py/modules/wing.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/baseline.json" beforeDir="false" afterPath="$PROJECT_DIR$/configs/baseline.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/simulation.json" beforeDir="false" afterPath="$PROJECT_DIR$/configs/simulation.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/configs/trials/trial1.json" beforeDir="false" afterPath="$PROJECT_DIR$/configs/trials/trial1.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -151,7 +156,15 @@
       <option name="project" value="LOCAL" />
       <updated>1781707772186</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Implement AoA sweep plotting for aerodynamic coefficients (CL, CD, L/D)">
+      <option name="closed" value="true" />
+      <created>1781716074961</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1781716074961</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -164,6 +177,7 @@
     <MESSAGE value="Add core aerodynamic modeling framework" />
     <MESSAGE value="Implement airfoil geometry visualization and correct MAC calculation, add references" />
     <MESSAGE value="Fix README" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix README" />
+    <MESSAGE value="Implement AoA sweep plotting for aerodynamic coefficients (CL, CD, L/D)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Implement AoA sweep plotting for aerodynamic coefficients (CL, CD, L/D)" />
   </component>
 </project>

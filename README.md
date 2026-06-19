@@ -137,6 +137,8 @@ downwash effects)
 3. Akgün, A., *NACA 4-Digit Airfoil Generation*.
    https://web.itu.edu.tr/~atares/courses/CA/3.1.1_NACA4.html
 
+4. Anderson, J., *Aircraft Performance and Design*
+    https://soaneemrana.org/onewebmedia/AIRCRAFT%20PERFORMANCE%20AND%20DESIGN1.pdf
 ### Contributing
 This is an independent research project.
 Contributions, feedback, and suggestions are welcome, especially in areas such as:
