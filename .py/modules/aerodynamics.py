@@ -1,4 +1,6 @@
 import math
+import numpy as np
+from scipy.integrate import quad
 
 class Aerodynamics:
     def __init__(self, wing, physics):
@@ -20,59 +22,75 @@ class Aerodynamics:
         self.convergence\
             = self.physics["numerics"]["convergence_tolerance"]
 
-    def reynolds_number(self, chord):
-        return (self.air_density * self.velocity
-                * chord / self.dynamic_viscosity)
+        self.reynolds_number = (self.air_density * self.velocity
+                * self.wing.mean_chord / self.dynamic_viscosity)
+        self.a0 = 2 * math.pi
 
-    def cl_2d(self,alpha):
-        return 2 * math.pi * math.radians(alpha)
+        self.planform_correction = 0 # Temporary estimate
 
-    def cl_high_ar(self, alpha):
-        cl_2d = self.cl_2d(alpha)
-        return cl_2d / (1 + cl_2d /
-                        (math.pi * self.wing.ar * self.wing.oswald_efficiency))
+        self.lift_curve_slope = (self.a0 /
+                    (1 + ((self.a0 *
+                    (1 + self.planform_correction)) /
+                    (math.pi * self.wing.ar))))
 
-    def cl_low_ar(self, alpha):
-        cl_2d = self.cl_2d(alpha)
-        return (cl_2d / (math.sqrt(1 +
-                (cl_2d / (math.pi * self.wing.ar) ** 2))
-                + (cl_2d / (math.pi * self.wing.ar))))
+        def zero_lift_angle():
+            m = self.wing.airfoil.max_camber
+            p = self.wing.airfoil.max_camber_loc
+            c = self.wing.mean_chord
+
+            def dz_dx(x):
+                if x / c < p:
+                    return (2 * m / p ** 2) * (p - x / c)
+                else:
+                    return (2 * m / (1 - p) ** 2) * (p - x / c)
+
+            def integrand(theta: float) -> float:
+                x = 0.5 * c * (1 - np.cos(theta))
+                return dz_dx(x) * (np.cos(theta) - 1)
+
+            alpha_l0, _ = quad(integrand, 0, np.pi)
+
+            return alpha_l0 / np.pi  # radians
+
+        self.zero_lift_angle = zero_lift_angle()
 
     def cl(self, alpha):
-        if self.wing.ar >= 4:
-            result = self.cl_high_ar(alpha)
-        else:
-            result = self.cl_low_ar(alpha)
+        result = (self.lift_curve_slope *
+                  (math.radians(alpha) - self.zero_lift_angle))
 
         if alpha > self.wing.stall_angle - 5: # Stall model
-            return result - (((alpha -
-                    self.wing.stall_angle + 5) ** 2) / 100)
+            return max(0, result - (((alpha -
+                    self.wing.stall_angle + 5) ** 2) / 100))
         else:
             return result
 
     def cf(self): # Flow assumed to be laminar (Re < 5 x 10^5)
-        return 1.328 / math.sqrt(self.reynolds_number(self.wing.mean_chord))
+        return 1.328 / math.sqrt(self.reynolds_number)
+
+    def ff(self):
+        return (1 + 2.7 * self.wing.airfoil.max_thickness +
+                100 * self.wing.airfoil.max_thickness ** 4)
 
     def cd0(self):
-        return 0.02 # temporary simple assumption
+        return self.cf() * self.ff() * 2
+        # Wing isolated - ratio of wetted to
+        # reference area assumed to be 2
 
     def cdi(self, alpha):
         return (self.cl(alpha) ** 2 / (math.pi
                 * self.wing.ar * self.wing.oswald_efficiency))
 
     def cd(self, alpha):
-        return self.cd0() + self.cdi(alpha)
+        result = self.cd0() + self.cdi(alpha)
 
-    def lift(self, alpha):
-        return (0.5 * self.air_density * self.velocity
-                ** 2 * self.wing.area * self.cl(alpha))
-
-    def drag(self, alpha):
-        return (0.5 * self.air_density * self.velocity
-                ** 2 * self.wing.area * self.cd(alpha))
+        if alpha > self.wing.stall_angle - 5: # Stall model
+            return result + (((alpha -
+                    self.wing.stall_angle + 5) ** 2) / 1500)
+        else:
+            return result
 
     def ld(self,alpha):
-        return self.lift(alpha) / self.drag(alpha)
+        return self.cl(alpha) / self.cd(alpha)
 
     def alpha_sweep(self):
         alphas = []

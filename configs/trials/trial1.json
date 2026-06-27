@@ -1,12 +1,12 @@
 {
-  "airfoil": "NACA2412",
+  "airfoil": "NACA5555",
   "wing_span_m": 1,
   "root_chord_length_m": 0.5,
-  "tip_chord_length_m": 0.2,
+  "tip_chord_length_m": 0.1,
   "twist_angle_deg": 0,
   "sweep_angle_deg": 0,
   "dihedral_angle_deg": 0,
 
-  "oswald_efficiency": 0.8,
+  "oswald_efficiency": 0.6,
   "stall_angle_deg": 15
 }

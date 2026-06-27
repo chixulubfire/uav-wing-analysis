@@ -41,6 +41,7 @@ influences lift, drag, and overall aerodynamic efficiency.
 #### Prerequisites
 - Python 3.9.0+
 - NumPy
+- SciPy
 - Matplotlib
 
 #### Installation
