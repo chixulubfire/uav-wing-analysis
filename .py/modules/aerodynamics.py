@@ -57,12 +57,9 @@ class Aerodynamics:
     def cl(self, alpha):
         result = (self.lift_curve_slope *
                   (math.radians(alpha) - self.zero_lift_angle))
+        return result
 
-        if alpha > self.wing.stall_angle - 5: # Stall model
-            return max(0, result - (((alpha -
-                    self.wing.stall_angle + 5) ** 2) / 100))
-        else:
-            return result
+        # if alpha > self.wing.stall_angle - 2:
 
     def cf(self): # Flow assumed to be laminar (Re < 5 x 10^5)
         return 1.328 / math.sqrt(self.reynolds_number)
@@ -82,12 +79,9 @@ class Aerodynamics:
 
     def cd(self, alpha):
         result = self.cd0() + self.cdi(alpha)
+        return result
 
-        if alpha > self.wing.stall_angle - 5: # Stall model
-            return result + (((alpha -
-                    self.wing.stall_angle + 5) ** 2) / 1500)
-        else:
-            return result
+        # if alpha > self.wing.stall_angle - 2:
 
     def ld(self,alpha):
         return self.cl(alpha) / self.cd(alpha)

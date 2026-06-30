@@ -9,7 +9,7 @@
   "numerics": {
     "airfoil_points": 100,
     "alpha_min_deg": -5,
-    "alpha_max_deg": 20,
+    "alpha_max_deg": 15,
     "alpha_step": 0.5,
     "convergence_tolerance": 1e-6
   }
